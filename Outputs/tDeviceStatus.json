@@ -1,0 +1,16 @@
+{
+    "Name": "tDeviceStatus",
+    "DataSourceType": "SQL Database",
+    "SQLDatabaseProperties": {
+        "Database": "FR13SqlDatabase",
+        "Server": "fr13-sql-database-server",
+        "User": "otsuka",
+        "Password": null,
+        "Table": "t_device_status",
+        "MaxWriterCount": 1,
+        "MaxBatchCount": 10000,
+        "AuthenticationMode": "ConnectionString"
+    },
+    "DataSourceCredentialDomain": null,
+    "ScriptType": "Output"
+}

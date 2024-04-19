@@ -1,0 +1,149 @@
+WITH FullDeviceData AS (
+   SELECT * FROM StreamInput   
+)
+
+-- Data store for Table: t_meas_result_history
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    module_serial_no = moduleSerialNo,
+    product_lot_no = productLotNo,
+    module_no = moduleNo,
+    sample_meas_type = sampleMeasType,
+    sample_no = sampleNo,
+    sequence_no = sequenceNo,
+    rack_id = rackId,
+    rack_position = rackPosition,
+    sample_type = sampleType,
+    control_no = controlNo,
+    tube_type = tubeType,
+    sample_lot = sampleLot,
+    sample_id = sampleId,
+    sample_name = sampleName,
+    manual_dilution_ratio = manualDilutionRatio,
+    analytes = analytes,
+    dark_count = darkCount,
+    count_value_with_nd = countValueWithNd,
+    count_value = countValue,
+    CASE
+        WHEN TRY_CAST(concentration AS FLOAT) IS NULL THEN -9999.0
+        ELSE concentration
+    END AS concentration,
+    judgment = judgment,
+    remark = remark,
+    auto_dilution_ratio = autoDilutionRatio,
+    reagent_lot_no = reagentLotNo,
+    substrate_lot_no = substrateLotNo,
+    TRY_CAST(measuringDatetime AS DATETIME) AS measuring_datetime,
+    calib_info = calibInfo,
+    process_monitor = processMonitor,
+    s1 = s1,
+    s2 = s2,
+    s3 = s3,
+    dispense_volume = dispenseVolume,
+    sample_detect_pos = sampleDetectPos,
+    m_reag_port_no = mReagPortNo,
+    m_reag_detect_pos = mReagDetectPos,
+    r1_reag_port_no = r1ReagPortNo,
+    r1_reag_detect_pos = r1ReagDetectPos,
+    r2_reag_port_no = r2ReagPortNo,
+    r2_reag_detect_pos = r2ReagDetectPos,
+    temperature1 = temperature1,
+    temperature2 = temperature2,
+    temperature3 = temperature3,
+    temperature4 = temperature4,
+    temperature5 = temperature5,
+    temperature6 = temperature6,
+    temperature7 = temperature7
+INTO tMeasResultHistory
+FROM FullDeviceData
+WHERE commandId = 10;
+
+
+-- Data store for Table: t_error_history
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    module_serial_no = moduleSerialNo,
+    product_lot_no = productLotNo,
+    TRY_CAST(errorOccuredDatetime AS DATETIME) AS error_occured_datetime,
+    error_level = errorLevel,
+    error_code = errorCode,
+    error_arg = errorArg,
+    error_message = errorMessage
+INTO tErrorHistory
+FROM FullDeviceData
+WHERE commandId = 20;
+
+
+-- Data store for Table: t_device_health
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    module_serial_no = moduleSerialNo,
+    product_lot_no = productLotNo,
+    module_no = moduleNo,
+    TRY_CAST(assayDatetime AS DATETIME) AS assay_datetime,
+    part_name = partName,
+    part_info1 = partInfo1,
+    part_info2 = partInfo2
+INTO tDeviceHealth
+FROM FullDeviceData
+WHERE commandId = 30;
+
+
+-- Data store for Table: t_device_status
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    module_serial_no = moduleSerialNo,
+    product_lot_no = productLotNo,
+    module_no = moduleNo,
+    replacement_parts_name = replacementPartsName,
+    num_of_use = numOfUse,
+    limit_of_use = limitOfUse,
+    TRY_CAST(exchangeDate AS DATETIME) AS exchange_date
+INTO tDeviceStatus
+FROM FullDeviceData
+WHERE commandId = 40;
+
+
+-- Data store for Table: t_reag_remain
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    module_serial_no = moduleSerialNo,
+    product_lot_no = productLotNo,
+    module_no = moduleNo,
+    reag_consumption_id = reagConsumptionId,
+    reag_name = reagName,
+    port_no = portNo,
+    remain_vol = remainVol,
+    full_vol = fullVol,
+    lot_no = lotNo,
+    TRY_CAST(expireDate AS DATETIME) AS expire_date
+INTO tReagRemain
+FROM FullDeviceData
+WHERE commandId = 50
+
+
+-- Data store for Table: t_device_configuration
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    product_lot_no = productLotNo,
+    num_of_module = numOfModule,
+    installation_datetime = installationDatetime,
+    version_no = versionNo,
+    lis_on = lisOn,
+    las_on = lasOn,
+    printer_on = printerOn
+INTO tDeviceConfiguration
+FROM FullDeviceData
+WHERE commandId = 60;
