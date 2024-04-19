@@ -147,3 +147,26 @@ SELECT
 INTO tDeviceConfiguration
 FROM FullDeviceData
 WHERE commandId = 60;
+
+
+-- Data store for Table: t_device_logfile
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    file_path = filePath,
+    sent_date_time = sentDateTime
+INTO tDeviceLogfile
+FROM FullDeviceData
+WHERE commandId = 70;
+
+-- Data store for Table: t_device_backup
+SELECT
+    country_id = countryId,
+    model_id = modelId,
+    machine_serial_no = machineSerialNo,
+    file_path = filePath,
+    sent_date_time = sentDateTime
+INTO tDeviceBackup
+FROM FullDeviceData
+WHERE commandId = 80;
