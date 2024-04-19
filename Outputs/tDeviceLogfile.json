@@ -5,12 +5,12 @@
         "Database": "FR13SqlDatabase",
         "Server": "fr13-sql-database-server",
         "User": "otsuka",
-        "Password": null,
+        "Password": "********",
         "Table": "t_device_logfile",
         "MaxWriterCount": 1,
         "MaxBatchCount": 10000,
         "AuthenticationMode": "ConnectionString"
     },
-    "DataSourceCredentialDomain": null,
+    "DataSourceCredentialDomain": "2ba95280-f035-4007-af17-97b638fbcddb.StreamAnalystics",
     "ScriptType": "Output"
 }
