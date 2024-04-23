@@ -7,19 +7,11 @@
             "subType": "JobConfig"
         },
         {
-            "filePath": "Outputs/tDeviceBackup.json",
-            "subType": "Output"
-        },
-        {
             "filePath": "Outputs/tDeviceConfiguration.json",
             "subType": "Output"
         },
         {
             "filePath": "Outputs/tDeviceHealth.json",
-            "subType": "Output"
-        },
-        {
-            "filePath": "Outputs/tDeviceLogfile.json",
             "subType": "Output"
         },
         {

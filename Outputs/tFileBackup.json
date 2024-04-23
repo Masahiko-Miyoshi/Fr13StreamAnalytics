@@ -6,7 +6,7 @@
         "Server": "fr13-sql-database-server",
         "User": "otsuka",
         "Password": "********",
-        "Table": "t_device_backup",
+        "Table": "t_file_backup",
         "MaxWriterCount": 1,
         "MaxBatchCount": 10000,
         "AuthenticationMode": "ConnectionString"
