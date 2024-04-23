@@ -156,7 +156,7 @@ SELECT
     machine_serial_no = machineSerialNo,
     file_path = filePath,
     sent_date_time = sentDateTime
-INTO tDeviceLogfile
+INTO tFileDeviceLog
 FROM FullDeviceData
 WHERE commandId = 70;
 
@@ -167,6 +167,6 @@ SELECT
     machine_serial_no = machineSerialNo,
     file_path = filePath,
     sent_date_time = sentDateTime
-INTO tDeviceBackup
+INTO tFileBackup
 FROM FullDeviceData
 WHERE commandId = 80;
