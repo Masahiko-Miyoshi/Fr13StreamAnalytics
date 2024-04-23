@@ -1,5 +1,5 @@
 {
-    "Name": "tDeviceLogfile",
+    "Name": "tFileDeviceLog",
     "DataSourceType": "SQL Database",
     "SQLDatabaseProperties": {
         "Database": "FR13SqlDatabase",

@@ -1,5 +1,5 @@
 {
-    "Name": "tDeviceBackup",
+    "Name": "tFileBackup",
     "DataSourceType": "SQL Database",
     "SQLDatabaseProperties": {
         "Database": "FR13SqlDatabase",

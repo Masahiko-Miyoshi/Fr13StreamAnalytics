@@ -33,6 +33,14 @@
         {
             "filePath": "Inputs/StreamInput.json",
             "subType": "Input"
+        },
+        {
+            "filePath": "Outputs/tFileBackup.json",
+            "subType": "Output"
+        },
+        {
+            "filePath": "Outputs/tFileDeviceLog.json",
+            "subType": "Output"
         }
     ]
 }
