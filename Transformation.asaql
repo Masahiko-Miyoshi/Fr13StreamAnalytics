@@ -1,5 +1,5 @@
 WITH FullDeviceData AS (
-   SELECT * FROM StreamInput   
+   SELECT * FROM StreamInput
 )
 
 -- Data store for Table: t_meas_result_history
@@ -155,18 +155,20 @@ SELECT
     model_id = modelId,
     machine_serial_no = machineSerialNo,
     file_path = filePath,
-    sent_date_time = sentDateTime
+    updated_at = sentDateTime
 INTO tFileDeviceLog
 FROM FullDeviceData
 WHERE commandId = 70;
+
 
 -- Data store for Table: t_device_backup
 SELECT
     country_id = countryId,
     model_id = modelId,
     machine_serial_no = machineSerialNo,
+    file_version = fileVersion,
     file_path = filePath,
-    sent_date_time = sentDateTime
+    updated_at = sentDateTime
 INTO tFileBackup
 FROM FullDeviceData
 WHERE commandId = 80;
