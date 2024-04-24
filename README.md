@@ -3,7 +3,7 @@
 1．本リポジトリーのクローンを作成（例：projects/Fr13StreamAnalytics)  
 2．VScodeでローカルフォルダ（projects/Fr13StreamAnalytics）を開く  
 3. ルートに配置されているTransformation.asaqlがクエリーファイルになるので、編集する  
-4．編集画面上部に位置する「Submit to azure]をクリック  
+4．編集画面上部に位置する「Submit to azure]をクリックするとAzureにアップロードします
 
 <img width="584" alt="image" src="https://github.com/Otsuka-Electronics/Fr13StreamAnalytics/assets/138413956/6fd7a1f0-e2ab-4c25-b415-2fb7baaecefb">
 
@@ -30,7 +30,7 @@
     "ScriptType": "Output"
 }
 ```
-3．編集画面上部に位置する「Submit to azure]をクリック  
+3．編集画面上部に位置する「Submit to azure]をクリックするとAzureにアップロードします  
 
 <img width="584" alt="image" src="https://github.com/Otsuka-Electronics/Fr13StreamAnalytics/assets/138413956/6fd7a1f0-e2ab-4c25-b415-2fb7baaecefb">
 
